@@ -22,6 +22,7 @@ final class VoyageType extends AbstractType
             ->add('planet', null, [
                 'choice_label' => 'name',
                 'placeholder' => 'Choose a planet',
+                'autocomplete' => true,
             ]);
     }
 
