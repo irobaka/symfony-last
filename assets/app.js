@@ -5,12 +5,12 @@
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
-import alienGreeting from './lib/alien-greeting.js';
+// import alienGreeting from './lib/alien-greeting.js';
 import JSConfetti from 'js-confetti';
 
 const jsConfetti = new JSConfetti();
 jsConfetti.addConfetti();
 
-alienGreeting("Give us all your cakes");
+// alienGreeting("Give us all your cakes");
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
