@@ -16,6 +16,7 @@
                 method="GET"
                 action="{{ path('app_homepage') }}"
                 class="mb-6 flex justify-between"
+                data-controller="autosubmit"
             >
                 <input
                     type="search"
@@ -24,6 +25,8 @@
                     aria-label="Search voyages"
                     placeholder="Search voyages"
                     class="w-1/3 px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400"
+                    data-action="autosubmit#debouncedSubmit"
+                    autofocus
                 >
                 <div class="whitespace-nowrap m-2 mr-4">{{ voyages|length }} results</div>
             </form>

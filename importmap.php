@@ -60,4 +60,7 @@ return [
     'stimulus-popover' => [
         'version' => '6.2.0',
     ],
+    'debounce' => [
+        'version' => '3.0.0',
+    ],
 ];
