@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Repository\PlanetRepository;
 use App\Repository\VoyageRepository;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
@@ -15,16 +17,28 @@ final class MainController extends AbstractController
     public function homepage(
         VoyageRepository $voyageRepository,
         PlanetRepository $planetRepository,
-        #[MapQueryParameter('query')] ?string $query = null,
+        #[MapQueryParameter] int $page = 1,
+        #[MapQueryParameter] string $sort = 'leaveAt',
+        #[MapQueryParameter] string $sortDirection = 'ASC',
+        #[MapQueryParameter] ?string $query = null,
         #[MapQueryParameter('planets', \FILTER_VALIDATE_INT)] array $searchPlanets = [],
     ): Response
     {
-        $voyages = $voyageRepository->findBySearch($query, $searchPlanets);
+        $validSorts = ['leaveAt', 'purpose'];
+        $sort = in_array($sort, $validSorts) ? $sort : 'leaveAt';
+
+        $pager = Pagerfanta::createForCurrentPageWithMaxPerPage(
+            new QueryAdapter($voyageRepository->findBySearchQueryBuilder($query, $searchPlanets, $sort, $sortDirection)),
+            $page,
+            maxPerPage: 10
+        );
 
         return $this->render('main/homepage.html.twig', [
-            'voyages' => $voyages,
+            'voyages' => $pager,
             'planets' => $planetRepository->findAll(),
             'searchPlanets' => $searchPlanets,
+            'sort' => $sort,
+            'sortDirection' => $sortDirection,
         ]);
     }
 }
