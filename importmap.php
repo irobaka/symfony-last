@@ -66,4 +66,7 @@ return [
     'turbo-view-transitions' => [
         'version' => '0.3.0',
     ],
+    'stimulus-use' => [
+        'version' => '0.52.3',
+    ],
 ];
