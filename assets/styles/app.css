@@ -4,6 +4,21 @@
 
 @variant turbo-frame (turbo-frame[src] &);
 
+@theme {
+    --animate-fade-in: fade-in .5s ease-out;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+
 /* tom-select custom styling */
 /* Base Styles for Dark Mode */
 .ts-wrapper {
