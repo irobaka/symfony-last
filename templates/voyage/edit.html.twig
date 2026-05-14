@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'modalBase.html.twig' %}
 
 {% block title %}Edit Voyage{% endblock %}
 
 {% block body %}
-    <div class="m-4 p-4 bg-gray-800 rounded-lg">
+    <div class="m-4 p-4 modal:p-0 modal:m-0 bg-gray-800 rounded-lg">
         <div class="flex justify-between">
             <h1 class="text-xl font-semibold text-white mb-4">Edit Voyage</h1>
 
@@ -21,4 +21,18 @@
 
         {{ include('voyage/_form.html.twig') }}
     </div>
+{% endblock %}
+
+
+{% block stream_success %}
+    <turbo-stream action="update" target="modal">
+        <template>
+        </template>
+    </turbo-stream>
+
+    <turbo-stream action="replace" target="voyage-list-item-{{ voyage.id }}">
+        <template>
+            {{ include('voyage/_row.html.twig') }}
+        </template>
+    </turbo-stream>
 {% endblock %}

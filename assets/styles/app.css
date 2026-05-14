@@ -3,6 +3,7 @@
 @source "../../vendor/tales-from-a-dev/flowbite-bundle/templates/**/*.html.twig";
 
 @variant turbo-frame (turbo-frame[src] &);
+@variant modal (dialog &);
 
 @theme {
     --animate-fade-in: fade-in .5s ease-out;
@@ -18,6 +19,11 @@
     }
 }
 
+@layer utilities {
+    .text-fg-danger-strong {
+        color: #dc2626; /* red-600, adjust as needed */
+    }
+}
 
 /* tom-select custom styling */
 /* Base Styles for Dark Mode */
