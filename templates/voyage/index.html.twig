@@ -9,8 +9,8 @@
             class="flex justify-between"
         >
             <h1 class="text-xl font-semibold text-white mb-4">Voyages</h1>
-            <a href="{{ path('app_voyage_new') }}"
-                class="flex items-center space-x-1 bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold px-4 rounded"
+            <twig:Button tag="a" href="{{ path('app_voyage_new') }}"
+                class="flex items-center space-x-1 font-bold"
                data-turbo-frame="modal"
             >
                 <span>New Voyage</span>
@@ -21,7 +21,7 @@
                     <path d="M9 12h6"/>
                     <path d="M12 9v6"/>
                 </svg>
-            </a>
+            </twig:Button>
         </div>
 
         <table class="min-w-full bg-gray-800 text-white" id="voyage-list">

@@ -69,4 +69,7 @@ return [
     'stimulus-use' => [
         'version' => '0.52.3',
     ],
+    '@symfony/ux-live-component' => [
+        'path' => './vendor/symfony/ux-live-component/assets/dist/live_controller.js',
+    ],
 ];

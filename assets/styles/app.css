@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @source "../../vendor/tales-from-a-dev/flowbite-bundle/templates/**/*.html.twig";
+@source "../../src/Twig/Components/**/*.php";
 
 @variant turbo-frame (turbo-frame[src] &);
 @variant modal (dialog &);
@@ -15,6 +16,19 @@
 
         to {
             opacity: 1;
+        }
+    }
+
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: rotate(-3deg);
+        }
+
+        50% {
+            transform: rotate(3deg);
         }
     }
 }
