@@ -161,6 +161,15 @@
             "./config/packages/monolog.yaml"
         ]
     },
+    "symfony/panther": {
+        "version": "2.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "eac1868f830a3e332764bb3919ab02311b3340c8"
+        }
+    },
     "symfony/property-info": {
         "version": "8.0",
         "recipe": {
@@ -332,6 +341,15 @@
     },
     "twig/extra-bundle": {
         "version": "v3.24.0"
+    },
+    "zenstruck/browser": {
+        "version": "1.10",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.9",
+            "ref": "98ea0fbe24749dd1a84976de6f53dbb608046f16"
+        }
     },
     "zenstruck/foundry": {
         "version": "2.9",
