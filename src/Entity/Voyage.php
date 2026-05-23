@@ -70,7 +70,7 @@ class Voyage
         return $this->wormholeUpgrade;
     }
 
-    public function setWormholeUpgrade(bool $wormholeUpgrade): static
+    public function setWormholeUpgrade(?bool $wormholeUpgrade): static
     {
         $this->wormholeUpgrade = $wormholeUpgrade;
 

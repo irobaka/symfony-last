@@ -1,0 +1,11 @@
+<div {{ attributes }}>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <twig:Button variant="success" formnovalidate class="hover:animate-wiggle">
+        {{ button_label|default('Save') }}
+    </twig:Button>
+
+    {{ form_end(form) }}
+
+</div>
